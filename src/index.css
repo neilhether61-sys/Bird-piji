@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-brand-orange: #FF7A00;
+  --color-brand-orange-hover: #E06C00;
+  --color-brand-light-orange: #FFF3E8;
+  --color-brand-dark-orange: #451E00;
+}
+
+/* Custom styles for general polish */
+@layer base {
+  body {
+    @apply font-sans bg-white text-[#111111] antialiased transition-colors duration-200 selection:bg-brand-orange/20 selection:text-brand-orange;
+  }
+  
+  body.dark {
+    @apply bg-[#0B0B0B] text-[#F3F4F6];
+  }
+}
+
+/* Custom scrollbar to match premium minimal aesthetic */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 122, 0, 0.4);
+}
+
+/* Pulse glow effect for the main letter CTAs */
+@keyframes soft-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 122, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px 6px rgba(255, 122, 0, 0.2);
+  }
+}
+
+.soft-glow-button {
+  animation: soft-pulse 3s infinite;
+}
+

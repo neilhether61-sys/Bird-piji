@@ -1,0 +1,6 @@
+{
+  "name": "Future Letter",
+  "description": "Write letters to your future self, locked safely in your local browser until the chosen date. A modern, private time capsule.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
